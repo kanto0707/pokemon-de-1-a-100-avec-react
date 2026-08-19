@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; //hook
+import { useState, useEffect } from 'react';
 import Pokemon from './components/Pokemon';
 import './App.css';
 
@@ -7,11 +7,11 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=100')                                          //ca c'est promise
-      .then((res) => res.json()) // format brute avadika json
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=100')
+      .then((res) => res.json())
       .then((data) => {
-        setPokemons(data.results); // qd les donnees arrivent, on met dans le tableau
-        setLoading(false); // qd la liste est arrivee, on met le chargement a false
+        setPokemons(data.results);
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
